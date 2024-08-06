@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: black;color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    let listParent = document.querySelector("ul")
+    /*const listItem = document.createElement("li")
+    listItem.innerText = "Web Development"
+    console.log(listItem)
+    listParent.appendChild(listItem)*/
+    function AddlistItem(text)
+    {
+        const listItem = document.createElement("li")
+        listItem.innerText = text
+        listParent.appendChild(listItem)
+    }
+    function OptiaddListItem(text)
+    {
+        const listItem = document.createElement("li")
+        listItem.appendChild(document.createTextNode(text))
+        document.querySelector("ul").appendChild(listItem)
+    }
+    AddlistItem("Andriod")
+    AddlistItem("Web Development")
+    AddlistItem("JS - Course")
+    AddlistItem("CPP - Course")
+    OptiaddListItem("Java - Course Latest")
+
+    //EDIT
+    const EditedItem = document.querySelector("li:nth-child(2)")
+    EditedItem.innerHTML = "Cyber Course"
+
+    const new_item = document.createElement('li')
+    new_item.textContent = "Mobile Development"
+    EditedItem.replaceWith(new_item)
+
+    //REMOVE
+    const lastItem = document.querySelector('li:last-child')
+    lastItem.remove()
+
+</script>
+</html>
